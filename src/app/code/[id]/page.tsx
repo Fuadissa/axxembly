@@ -20,8 +20,12 @@ import { CodeEditor } from "@/components/code-editor";
 import axios from "axios";
 import { ImageWithSkeleton } from "@/components/imagewithskeleton";
 
-export default async function CodePage({ params }: { params: { id: string } }) {
-  const { id } = params;
+export default async function CodePage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
   // Fetch the code post data
   const res = await axios.get(
     `${process.env.NEXTAUTH_URL}/api/code-posts/${id}`
