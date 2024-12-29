@@ -56,7 +56,7 @@ export default async function CodePageModal({
 
   return (
     <Modal>
-      <div className="overflow-y-auto p-6 space-y-12">
+      <div className="container mx-auto p-2 md:p-6 space-y-12">
         {/* Header */}
         <div className="text-center">
           <h1 className="text-2xl lg:text-3xl font-bold">{post.title}</h1>
