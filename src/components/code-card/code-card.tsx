@@ -23,13 +23,13 @@ export const CodeCard = ({ post }: CodeCardProps) => {
   return (
     <>
       <Link href={`/code/${post._id}`} className="overflow-hidden">
-        <div className="relative w-full h-56 rounded-lg overflow-hidden shadow-md">
+        <div className="relative w-full h-48 rounded-lg overflow-hidden shadow-md">
           <ImageWithSkeleton
             src={`${post.screenshots[0]}`}
             alt="Placeholder"
             width={800}
             height={600}
-            className="object-cover w-full h-full"
+            className="absolute inset-0 w-full h-full object-cover"
           />
         </div>
 

@@ -23,7 +23,7 @@ export const CardSkeleton = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-6">
           {Array.from({ length: numberOfCards }).map((_, i) => (
             <div key={i} className="flex flex-col space-y-3">
-              <Skeleton className="h-56 w-full rounded-lg" />
+              <Skeleton className="h-48 w-full rounded-lg" />
               <div className="space-y-2">
                 <Skeleton className="h-4 w-full" />
                 <Skeleton className="h-4 w-[90%]" />

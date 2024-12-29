@@ -198,6 +198,9 @@ export default function PostCode() {
         });
 
         form.reset(); // Reset the form
+        setUploadedImages([]);
+        setGithubCodeEditor(false);
+        setGithubCode("");
       } else {
         // Show an error toast for failed request
         toast({
