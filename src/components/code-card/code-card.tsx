@@ -18,7 +18,8 @@ interface CodeCardProps {
 }
 
 export const CodeCard = ({ post }: CodeCardProps) => {
-  const { theme } = useTheme();
+  const { theme, resolvedTheme } = useTheme();
+
   return (
     <>
       <Link href={`/code/${post._id}`} className="overflow-hidden">
@@ -48,7 +49,8 @@ export const CodeCard = ({ post }: CodeCardProps) => {
                     key={index} // Use index as key here since we are rendering icons
                     style={{
                       color:
-                        theme === "dark" && tech.color === "#000000"
+                        (theme === "dark" || resolvedTheme === "dark") &&
+                        tech.color === "#000000"
                           ? "white"
                           : tech.color,
                     }}
