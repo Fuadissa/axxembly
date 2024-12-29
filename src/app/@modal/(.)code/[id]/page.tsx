@@ -21,11 +21,15 @@ import {
 } from "react-icons/fa6";
 import { ImageWithSkeleton } from "@/components/imagewithskeleton";
 
-export default async function CodePageModal({
-  params: { id },
-}: {
-  params: { id: string };
-}) {
+// Define the type for the dynamic route props
+interface CodePageModalProps {
+  params: {
+    id: string;
+  };
+}
+
+export default async function CodePageModal({ params }: CodePageModalProps) {
+  const { id } = params;
   // Fetch the code post data
   const res = await axios.get(
     `${process.env.NEXTAUTH_URL}/api/code-posts/${id}`
