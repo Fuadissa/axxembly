@@ -13,10 +13,13 @@ async function getSinglePost(postId: string) {
 // GET function to handle fetching a single post
 export async function GET(
   req: Request,
-  { params }: { params: { id: string } }
+  {
+    params,
+  }: {
+    params: Promise<{ id: string }>;
+  }
 ) {
-  const { id: postId } = params;
-
+  const { id: postId } = await params;
   try {
     // Ensure database connection
     await dbConnect();
