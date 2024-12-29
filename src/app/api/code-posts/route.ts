@@ -1,8 +1,7 @@
-import { NextApiRequest } from "next";
+import { NextRequest, NextResponse } from "next/server"; // Use NextRequest
 import { CodePost } from "@/lib/models/CodePostSchema"; // Ensure the correct path for the CodePost schema
 import { ObjectId } from "mongodb"; // Ensure MongoDB's ObjectId is imported
 import dbConnect from "@/lib/db";
-import { NextResponse } from "next/server";
 
 const PAGE_SIZE = 20;
 
@@ -21,10 +20,12 @@ async function getPostsForYou(cursor: string | null) {
 }
 
 // Export the GET function for fetching posts (with pagination)
-export async function GET(req: NextApiRequest) {
-  const cursor = req.query?.cursor || null;
+export async function GET(req: NextRequest) {
+  const url = new URL(req.url); // Parse the URL
+  const cursor = url.searchParams.get("cursor"); // Extract query parameter
+
   try {
-    const posts = await getPostsForYou(cursor as string | null);
+    const posts = await getPostsForYou(cursor);
     const nextCursor =
       posts.length === PAGE_SIZE
         ? posts[posts.length - 1]._id.toString()
