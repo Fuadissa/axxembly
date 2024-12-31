@@ -57,7 +57,7 @@ export const CodeListings = () => {
     <section className="lg:py-10 py-4 overflow-x-clip">
       <div className="container relative lg:pl-0 lg:pr-0">
         <InfiniteScrollContainer
-          className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-4"
           onBottomReached={() => hasNextPage && !isFetching && fetchNextPage()}
         >
           {posts.map((post) => (

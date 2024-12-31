@@ -29,7 +29,7 @@ export const CodeCard = ({ post }: CodeCardProps) => {
             alt="Placeholder"
             width={800}
             height={600}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-fill"
           />
         </div>
 
