@@ -19,7 +19,7 @@ export const CardSkeleton = () => {
 
   return (
     <section className="lg:py-10 py-4 overflow-x-clip">
-      <div className="container relative">
+      <div className="container relative lg:pl-0 lg:pr-0">
         <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-6">
           {Array.from({ length: numberOfCards }).map((_, i) => (
             <div key={i} className="flex flex-col space-y-3">
